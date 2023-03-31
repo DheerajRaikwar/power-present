@@ -1,1 +1,8 @@
-<p>slide-presentor works!</p>
+<div class="container-fluid">
+    <button class="btn btn-primary" (click)="playSlides()" Play </button>
+    <div class="row">
+            {{selectedSlide.title}}
+            {{selectedSlide.description}}
+            {{selectedSlide.pageno}}
+    </div>
+</div>

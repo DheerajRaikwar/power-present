@@ -1,3 +1,14 @@
 <div class="container slide-list">
-    <p> This is slide list container </p>
+  <button (click)="newSlide()" class="btn btn-success"> New Slide</button>
+  <br>
+  <hr>
+  <div class="col-6 container-fluid" *ngFor="let slide of slides" [slide]="slide"
+    (onSelectSlide)="selectedSlide(slide)">
+    <a (click)="onSelectSlide"> <div class="border border-primary container-fluid ">
+      <p> {{slide.title}}</p>
+      <p> {{slide.description}}</p>
+      <p> {{slide.pageno}}</p> 
+  </div>
+</a>
+</div>
 </div>
