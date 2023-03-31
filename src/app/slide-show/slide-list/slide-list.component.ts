@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { Slide } from '../slide-model/slide-model';
 import { SlideShowComponent } from '../slide-show.component';
 
@@ -8,7 +8,9 @@ import { SlideShowComponent } from '../slide-show.component';
   styleUrls: ['./slide-list.component.css']
 })
 export class SlideListComponent {
-
+  @Input() slide:Slide;
+  @Output() onSelectSlide = new EventEmitter<Slide>();
+  
   slides :Slide[]=[
     new Slide("myView","This is a normal application",1)
   ]
@@ -18,5 +20,8 @@ export class SlideListComponent {
   }
   ngOnInit(){
 
+  }
+  selectedSlide(slide:Slide){
+    this.onSelectSlide.emit(slide)
   }
 }
