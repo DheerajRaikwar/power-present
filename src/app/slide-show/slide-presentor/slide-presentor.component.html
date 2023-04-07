@@ -1,8 +1,13 @@
-<div class="container-fluid">
-    <button class="btn btn-primary" (click)="playSlides()" Play </button>
-    <div class="row">
-            {{selectedSlide.title}}
-            {{selectedSlide.description}}
-            {{selectedSlide.pageno}}
-    </div>
+<button class="btn btn-primary"> Play </button>
+
+<br><br>
+<div class="card">
+
+  <div class="card-body" style="height: fit-content;">
+    <h5 class="card-title">{{selectedSlide.title}}</h5>
+    <p class="card-text"> {{selectedSlide.description}}</p>
+    <a href="#" class="card-link">{{selectedSlide.pageno}}</a>
+    <br><br>
+    <button class="btn btn-danger" (click)="onDeleteSlide(selectedSlide)">delete</button>
+  </div>
 </div>

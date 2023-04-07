@@ -3,11 +3,11 @@
     <br>
     <div class="row">
         <div class="col-4">
-            <app-slide-list></app-slide-list>
+            <app-slide-list [slides] = "slides" (selectedSlide)="onSelectSlide($event)"></app-slide-list>
         </div>
         
         <div class="col-8">
-            <app-slide-presentor></app-slide-presentor>
+            <app-slide-presentor [selectedSlide]="selectedSlide" (deleteSlide)="deleteSelectedSlide($event)"></app-slide-presentor>
         </div>
     </div>
     

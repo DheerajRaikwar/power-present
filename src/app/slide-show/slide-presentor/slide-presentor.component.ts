@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, Input,EventEmitter } from '@angular/core';
 import { Slide } from '../slide-model/slide-model';
  
 @Component({
@@ -7,12 +7,10 @@ import { Slide } from '../slide-model/slide-model';
   styleUrls: ['./slide-presentor.component.css']
 })
 export class SlidePresentorComponent {
-  selectedSlide : Slide;
-
-  playSlides(){
-    
-  }
-
-
-
+ @Input() selectedSlide:Slide;
+ @Output() deleteSlide : EventEmitter<Slide> = new EventEmitter();
+ 
+ onDeleteSlide(slide:Slide){  
+  this.deleteSlide.emit(slide);
+}
 }

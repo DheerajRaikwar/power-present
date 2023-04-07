@@ -1,14 +1,17 @@
 <div class="container slide-list">
-  <button (click)="newSlide()" class="btn btn-success"> New Slide</button>
+  <button class="btn btn-success"> New Slide</button>
   <br>
   <hr>
-  <div class="col-6 container-fluid" *ngFor="let slide of slides" [slide]="slide"
-    (onSelectSlide)="selectedSlide(slide)">
-    <a (click)="onSelectSlide"> <div class="border border-primary container-fluid ">
-      <p> {{slide.title}}</p>
-      <p> {{slide.description}}</p>
-      <p> {{slide.pageno}}</p> 
+  <div class="col-6 container-fluid">
+    <div class="container-fluid" *ngFor="let slide of slides">
+      <a (click)="onSelectSlide(slide)">
+        <div class="card">
+          <div class="card-body" style="height: fit-content;">
+            <h5 class="card-title">{{slide.title}}</h5>
+            <p>{{slide.pageno}}</p>
+        </div>
+        </div>
+      </a><br>
+    </div>
   </div>
-</a>
-</div>
 </div>

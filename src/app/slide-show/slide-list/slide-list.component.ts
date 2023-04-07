@@ -8,20 +8,14 @@ import { SlideShowComponent } from '../slide-show.component';
   styleUrls: ['./slide-list.component.css']
 })
 export class SlideListComponent {
-  @Input() slide:Slide;
-  @Output() onSelectSlide = new EventEmitter<Slide>();
+ 
+  @Input() slides:Slide[];
+  @Output() selectedSlide : EventEmitter<Slide> = new EventEmitter();
   
-  slides :Slide[]=[
-    new Slide("myView","This is a normal application",1)
-  ]
 
-  newSlide(){
-    this.slides.push(new Slide("dumy","dumy",0))
+  onSelectSlide(slide:Slide){
+    this.selectedSlide.emit(slide);
   }
-  ngOnInit(){
 
-  }
-  selectedSlide(slide:Slide){
-    this.onSelectSlide.emit(slide)
-  }
+
 }
