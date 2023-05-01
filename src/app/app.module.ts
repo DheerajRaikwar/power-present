@@ -6,6 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { SlideListComponent } from './slide-show/slide-list/slide-list.component';
 import { SlideShowComponent } from './slide-show/slide-show.component';
 import { SlidePresentorComponent } from './slide-show/slide-presentor/slide-presentor.component';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SlidePresentorComponent } from './slide-show/slide-presentor/slide-pres
     SlidePresentorComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

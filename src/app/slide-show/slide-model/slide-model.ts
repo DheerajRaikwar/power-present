@@ -1,11 +1,12 @@
 export class Slide{
     public title : String
     public description : String
-    public pageno : number
+    public pn : number;
+    public static pageno = 0;
 
-    constructor(title:String,description:String,pageno:number){
+    constructor(title:String,description:String){
         this.title = title;
-        this.description =description;
-        this.pageno = pageno
+        this.description =description;        
+        this.pn = Slide.pageno++;
     }
 }

@@ -10,7 +10,7 @@ export class SlidePresentorComponent {
  @Input() selectedSlide:Slide;
  @Output() deleteSlide : EventEmitter<Slide> = new EventEmitter();
  
- onDeleteSlide(slide:Slide){  
-  this.deleteSlide.emit(slide);
-}
+//  onDeleteSlide(slide:Slide){  
+//   this.deleteSlide.emit(slide);
+// }
 }

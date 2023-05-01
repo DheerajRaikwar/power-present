@@ -10,25 +10,13 @@ export class SlideShowComponent {
 
   slides:Slide[];
   selectedSlide:Slide;
-  deleteSlide : Slide;
+  
 
   constructor(){
     this.slides = [
-      {
-        title:"hello",
-        description:"my first description",
-        pageno:1
-      },
-      {
-        title:"world",
-        description:"This is second one",
-        pageno:2
-      },
-      {
-        title:"supreme god",
-        description:"hare krishna hare krishna",
-        pageno:3
-      },
+      new Slide("Bhopal","bhopal is city of lakes it's cool place"),
+      new Slide("Indore","Indore is nice city but expensive"),
+      new Slide("Hyderabad","Hyderabad is the bigger city than bhopal and indore"),
     ]
   }
 
@@ -36,11 +24,11 @@ export class SlideShowComponent {
     this.selectedSlide = event;
   }
 
-  deleteSelectedSlide(event:Slide){
-    const index = this.slides.indexOf(event);
-    console.log(index);
-    console.log(event);
-    this.slides.splice(index,1);
-  }
+  // deleteSelectedSlide(event:Slide){
+  //   const index = this.slides.indexOf(event);
+  //   console.log(index);
+  //   console.log(event);
+  //   this.slides.splice(index,1);
+  // }
 
 }

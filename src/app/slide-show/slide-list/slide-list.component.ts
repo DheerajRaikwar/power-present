@@ -1,6 +1,7 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { Slide } from '../slide-model/slide-model';
 import { SlideShowComponent } from '../slide-show.component';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-slide-list',
@@ -12,10 +13,13 @@ export class SlideListComponent {
   @Input() slides:Slide[];
   @Output() selectedSlide : EventEmitter<Slide> = new EventEmitter();
   
-
+  
   onSelectSlide(slide:Slide){
     this.selectedSlide.emit(slide);
   }
 
+  onSubmit(f:NgForm){
+    this.slides.push(new Slide(f.value.title,f.value.desc));    
+  }
 
 }

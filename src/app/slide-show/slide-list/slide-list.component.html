@@ -1,6 +1,23 @@
 <div class="container slide-list">
-  <button class="btn btn-success"> New Slide</button>
+  <button class="btn btn-success"><a class="nav-link" href="#popup-box">New Slide</a></button>
   <br>
+  <br>
+  
+<div id="popup-box" class="modal">
+    <div class="content">        
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+          <input name="title" ngModel #title="ngModel">
+          <input name="desc" ngModel #desc="ngModel">
+          <button>Add</button>
+        </form>
+        
+
+        <a href="#" 
+           class="box-close">
+            ×
+        </a>
+    </div>
+</div>
   <hr>
   <div class="col-6 container-fluid">
     <div class="container-fluid" *ngFor="let slide of slides">
